@@ -72,6 +72,10 @@ storage:
   {% endif -%}
   {% if mongodb_storage_engine == 'wiredTiger' -%}
   wiredTiger:
+    {% if mongodb_wiredtiger_block_compressor is defined -%}
+    collectionConfig:
+      blockCompressor:  {{ mongodb_wiredtiger_block_compressor }}
+    {% endif -%}
     engineConfig:
       {% if mongodb_wiredtiger_cache_size is defined -%}
       cacheSizeGB: {{ mongodb_wiredtiger_cache_size }}

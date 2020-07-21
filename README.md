@@ -86,6 +86,7 @@ mongodb_storage_prealloc: true # Disable data file preallocation
 
 # WiredTiger Options
 mongodb_wiredtiger_cache_size: 1 # Cache size for wiredTiger in GB
+mongodb_wiredtiger_block_compressor: zstd # Default compression for collections
 
 ## systemLog Options
 ## The destination to which MongoDB sends all log output. Specify either 'file' or 'syslog'.
